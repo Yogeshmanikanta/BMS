@@ -55,4 +55,4 @@ def reset_password(request):
             return redirect('login')
     else:
         form=PasswordChangeForm(user=request.user)
-    return render(request,'users/reset_password.html',{'Forms':form}) 
+    return render(request,'users/reset_password.html',{'Form':form}) 
