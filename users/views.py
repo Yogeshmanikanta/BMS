@@ -3,11 +3,11 @@ from .forms import UserRegisterForm, UserUpdateForm
 from django.shortcuts import render,redirect
 from django.contrib.auth import login,authenticate
 from django.contrib.auth.decorators import login_required
-
+from movies.models import Movie , Booking
 
 def home(request):
     movies= Movie.objects.all()
-    return render(request,'home.html',{'movies':movies})
+    return render(request,'home.html',{'movie':movies})
 def register(request):
     if request.method == 'POST':
         form=UserRegisterForm(request.POST)
@@ -55,4 +55,4 @@ def reset_password(request):
             return redirect('login')
     else:
         form=PasswordChangeForm(user=request.user)
-    return render(request,'users/reset_password.html',{'Form':form}) 
+    return render(request,'users/reset_password.html',{'form':form})

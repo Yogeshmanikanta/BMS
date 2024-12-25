@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -53,7 +53,11 @@ MIDDLEWARE = [
 
 AUTH_USER_MODEL ='auth.user'
 EMAIL_BACKEND='djando.core.mail.backends.console.EmailBackend'
+
+MEDIA_URL='/media/'
+MEDIA_ROOT =os.path.join(BASE_DIR,'media')
 ROOT_URLCONF = 'bookmyseat.urls'
+LOGIN_URL ='/Login/'
 
 TEMPLATES = [
     {

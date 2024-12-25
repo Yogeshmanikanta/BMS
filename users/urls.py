@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import register, login_view, profile, reset_password, home
 from django.contrib.auth import views as auth_views
+import users.urls
 
 class CustomLogoutView(auth_views.LogoutView):
     def get(self, request, *args, **kwargs):
