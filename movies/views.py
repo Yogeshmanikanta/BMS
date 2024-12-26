@@ -44,7 +44,7 @@ def book_seats(request,theater_id):
             except IntegrityError:
                 error_seats.append(seat.seat_number)
         if error_seats:
-            error_message=f"The following seats are already booked:{',',join(error_seats)}"
+            error_message=f"The following seats are already booked:{','.join(error_seats)}"
             return render(request,'movies/seat_selection.html',{'theater':theaters,"seats":seats,'error':"No seat selected"})
         return redirect('profile')
     return render(request,'movies/seat_selection.html',{'theaters':theaters,"seats":seats})
