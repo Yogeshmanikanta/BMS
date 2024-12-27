@@ -35,7 +35,8 @@ def login_view(request):
 
 @login_required
 def profile(request):
-    bookings= Booking.objects.filter(user=request.user)
+    bookings = Booking.objects.filter(user=request.user)
+
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         if u_form.is_valid():
@@ -44,7 +45,8 @@ def profile(request):
     else:
         u_form = UserUpdateForm(instance=request.user)
 
-    return render(request, 'users/profile.html', {'u_form': u_form,'bookings':bookings})
+    return render(request, 'users/profile.html', {'u_form': u_form, 'bookings': bookings})
+
 
 @login_required
 def reset_password(request):

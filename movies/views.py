@@ -49,5 +49,13 @@ def book_seats(request,theater_id):
         return redirect('profile')
     return render(request,'movies/seat_selection.html',{'theaters':theaters,"seats":seats})
 
+from django.shortcuts import render
+from .models import Booking
+
+def profile(request):
+    # Fetch bookings for the current user
+    bookings = Booking.objects.filter(user=request.user).select_related('theater', 'movie', 'seat')
+
+    return render(request, 'movies/profile.html', {'bookings': bookings})
 
 
