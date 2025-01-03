@@ -156,8 +156,8 @@
 
 		<div class="show-times">
 			<div class="time-box">
-				{{ theater.time }}
 				<a href="{% url 'book_seats' theater.id %}">
+					<span>{{ theater.time }}</span>
 					<span>Book Now</span>
 				</a>
 			</div>

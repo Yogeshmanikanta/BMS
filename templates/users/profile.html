@@ -69,14 +69,14 @@
 						<div class="col">
 							<div class="card h-100 border-0 shadow-sm">
 								<div class="card-body">
-									<h5 class="card-title">{{ booking.movie.name }}</h5>
+									<h5 class="card-title">{{booking.movie.name}}</h5>
 									<p class="card-text">
-										<i class="fas fa-film me-2 text-muted"> </i> {{
-										booking.theater.name }}<br />
-										<i class="fas fa-chair me-2 text-muted"> </i> Seat: {{
-										booking.seat.seat_number }}<br />
-										<i class="far fa-clock me-2 text-muted"> </i> {{
-										booking.booked_at|date:"F d, Y H:i" }}
+										<i class="fas fa-film me-2 text-muted"></i>
+										theater:{{booking.theater.name}}<br />
+										<i class="fas fa-chair me-2 text-muted"></i>
+										seat:{{booking.seat.seat_number}}<br />
+										<i class="fas fa-clock me-2 text-muted"></i>
+										bookedAt:{{booking.booked_at}}
 									</p>
 								</div>
 							</div>
