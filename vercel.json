@@ -9,11 +9,6 @@
             "src": "/(.*)",
             "dest": "bookmyseat/wsgi.py"
         }
-    ],
-    
-        "rewrites": [
-          { "source": "/static/(.*)", "destination": "/static/$1" }
-        ]
-      
+    ] 
       
 }
