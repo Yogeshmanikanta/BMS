@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+
+print(os.environ.get('DATABASE_URL'))
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -89,17 +92,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django-BookMySeat',
-        'USER': 'django_bookmyseat_user',
-        'PASSWORD': '47F8AEMRLx6xfwP1b7wo1qzoeSK6DyDz',
-        'HOST': 'dpg-ctrtm0btq21c7392lfdg-a',
-        'PORT': '5432',  # Default PostgreSQL port
-    }
-}
+DATABASES['default'] = dj_database_url.parse('postgresql://django_bookmyseat_yk4g_user:0vl7v9JvHAGUMaTxGNdhj6zkqIYAMNma@dpg-cttt2d5umphs73ei459g-a.oregon-postgres.render.com/django_bookmyseat_yk4g')
 
 # 
 
