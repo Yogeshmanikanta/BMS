@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 
 class Movie(models.Model):
     name= models.CharField(max_length=255)
-    trailer=models.URLField()
     image= models.ImageField(upload_to="movies/")
     rating = models.DecimalField(max_digits=3,decimal_places=1)
     cast= models.TextField()

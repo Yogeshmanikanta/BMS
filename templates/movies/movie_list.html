@@ -97,29 +97,32 @@
 	}
 </style>
 
-$(document).ready(function () { // Add hover functionality to display a YouTube
-video $(".card").hover( function () { const videoUrl =
-$(this).data("movie.trailer.url"); // Retrieve video URL from the card's data
-attribute const videoEmbed = `
-<div class="video-container">
-	<iframe
-		width="100%"
-		height="100%"
-		src="${videoUrl}?autoplay=1&mute=1"
-		frameborder="0"
-		allow="autoplay; encrypted-media"
-		allowfullscreen
-	></iframe>
-</div>
-`; $(this).append(videoEmbed).addClass("shadow"); }, function () {
-$(this).find(".card-img-top").remove(); // Remove the video on hover out
-$(this).removeClass("shadow"); } ); // Implement client-side filtering
-$('input[name="search"]').on("input", function () { var searchTerm =
-$(this).val().toLowerCase(); $("#movieList .col-md-4").each(function () { var
-movieTitle = $(this).find(".card-title").text().toLowerCase(); if
-(movieTitle.includes(searchTerm)) { $(this).show(); } else { $(this).hide(); }
-}); }); });
+<script>
+	$(document).ready(function () {
+		// Add animation to cards on hover
+		$(".card").hover(
+			function () {
+				$(this).addClass("shadow");
+			},
+			function () {
+				$(this).removeClass("shadow");
+			}
+		);
 
+		// Implement client-side filtering
+		$('input[name="search"]').on("input", function () {
+			var searchTerm = $(this).val().toLowerCase();
+			$("#movieList .col-md-4").each(function () {
+				var movieTitle = $(this).find(".card-title").text().toLowerCase();
+				if (movieTitle.includes(searchTerm)) {
+					$(this).show();
+				} else {
+					$(this).hide();
+				}
+			});
+		});
+	});
+</script>
 <!-- <h1>Movies</h1>
 <ul>
     {% for movie in movies%}
