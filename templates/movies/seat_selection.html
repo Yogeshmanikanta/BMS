@@ -1,5 +1,4 @@
 {% extends "users/basic.html" %} {% block content %}
-
 <div class="container mt-5">
 	<div class="row">
 		<div class="col-lg-8 mx-auto">
@@ -48,7 +47,7 @@
 								<input
 									type="checkbox"
 									name="seats"
-									value="{{ seat.id }}"
+									value="{{ seats }}"
 									class="d-none"
 									id="seat-{{ seat.id }}"
 								/>

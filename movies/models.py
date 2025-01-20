@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 class Movie(models.Model):
     name= models.CharField(max_length=255)
+    trailer=models.TextField()
     image= models.ImageField(upload_to="movies/")
     rating = models.DecimalField(max_digits=3,decimal_places=1)
     cast= models.TextField()
@@ -22,7 +23,8 @@ class Theater(models.Model):
 
 class Seat(models.Model):
     theater = models.ForeignKey(Theater,on_delete=models.CASCADE,related_name='seats')
-    seat_number = models.CharField(max_length=10)
+    seat_number = seat_number = models.CharField(max_length=255)
+
     is_booked=models.BooleanField(default=False)
 
     def __str__(self):
