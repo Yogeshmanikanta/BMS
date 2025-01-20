@@ -26,7 +26,7 @@ class Theater(models.Model):
 class Seat(models.Model):
     theater = models.ForeignKey(Theater,on_delete=models.CASCADE,related_name='seats')
     seat_number = seat_number = models.CharField(max_length=255)
-
+    
     is_booked=models.BooleanField(default=False)
 
     def __str__(self):
