@@ -46,15 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users','embed_video',
+    'users',
     'movies',
 ]
-EMBED_VIDEO_BACKENDS = [
-    'embed_video.backends.YoutubeBackend',
-    'embed_video.backends.VimeoBackend',
-    'embed_video.backends.SoundCloudBackend',
-    'my_app.backends.CustomBackend',
-]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

@@ -9,7 +9,7 @@ class Movie(models.Model):
     rating = models.DecimalField(max_digits=3, decimal_places=1)
     cast = models.TextField()
     description = models.TextField(blank=True, null=True)  # optional
-    trailer = models.URLField(blank=True, null=True)  # optional field for trailer
+    trailer = models.TextField(blank=True, null=True)  # optional field for trailer
 
 
     def __str__(self):
