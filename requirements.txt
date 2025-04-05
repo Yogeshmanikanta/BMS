@@ -94,7 +94,7 @@ sympy==1.12
 tensorboard==2.17.0
 tensorboard-data-server==0.7.2
 tensorflow-estimator==2.15.0
-tensorflow-io-gcs-filesystem==0.31.0
+tensorflow-io-gcs-filesystem==0.37.1
 termcolor==2.4.0
 thinc==8.2.1
 torch==2.2.1
