@@ -29,11 +29,8 @@ SECRET_KEY = 'django-insecure-c8aetlj(=vp90n@#yoc^&d(_6ivp(d!bv-4-f!r$lawptjzrwu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'bms-zeta-navy.vercel.app',  # Your deployment domain
-    '127.0.0.1',                 # For local development
-    'localhost',                 # For local development
-]
+ALLOWED_HOSTS = ['bms-yogesh-manikantas-projects.vercel.app', '127.0.0.1', 'localhost']
+
  
 
 
